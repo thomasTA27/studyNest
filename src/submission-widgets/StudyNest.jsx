@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import { v4 as uuidv4 } from "uuid"
-import "./pomodoro-widget.css"
+import "./StudyNest.css"
 
 // Mock socket implementation - replace with actual socket.io implementation
 const mockSocket = {
@@ -13,14 +13,19 @@ const mockSocket = {
     console.log(`Listening to ${event}`)
     // For demo purposes, we'll simulate some events
     if (event === "userJoined") {
+      let hasJoined = false
+      if (!hasJoined) {
+      hasJoined = true
       setTimeout(() => {
-        callback({ username: "Jane", sessionId: "demo-session" })
-      }, 2000)
+        callback({ username: "Thomas", sessionId: "demo-session" })
+      }, 6000)
+      }
     }
     if (event === "emojiReaction") {
       setTimeout(() => {
-        callback({ emoji: "👍", username: "John" })
-      }, 3000)
+        const randomEmoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)]
+        callback({ emoji: randomEmoji, username: "John" })
+      }, 12000)
     }
   },
   disconnect: () => {
