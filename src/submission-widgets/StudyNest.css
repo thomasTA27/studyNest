@@ -486,3 +486,36 @@
   }
 }
 
+/* Add styling for the rain sound container */
+.rain-sound-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the rain sound button to match the StudyNest theme */
+.rain-sound-container button {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rain-sound-container button:hover {
+  background: linear-gradient(135deg, #5b46e5, #4338ca);
+  transform: translateY(-1px);
+}
+
+.rain-sound-container button::before {
+  content: "🌧️";
+  font-size: 1rem;
+}
+
